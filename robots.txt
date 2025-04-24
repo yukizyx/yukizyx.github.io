@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://yukizyx.github.io/al-folio/sitemap.xml
+Sitemap: https://yukizyx.github.io/sitemap.xml
