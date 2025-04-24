@@ -1,12 +1,11 @@
 {
   "basics": {
     "name": "Yuki Yongxin Zhao",
-    "label": "Scientist",
+    "label": "AI & ML Enthusiast | Content Creator",
     "image": "",
     "email": "yukizyx230@gmail.com",
-    "phone": "(000) 123-4567",
     "url": "https://yukizyx.github.io",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "summary": "I am a passionate AI & ML enthusiast, and I am also an avid content creator, sharing my knowledge and insights on various platforms.",
     "location": {
       "city": "Toronto",
       "countryCode": "CA",
@@ -22,13 +21,29 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Department of Computer Science, University of Toronto",
+      "location": "Toronto, ON, Canada",
+      "position": "Teaching Assistant",
+      "startDate": "2024-09-01",
+      "endDate": "2025-05-01",
+      "summary": "As a Teaching Assistant, I hold regular office hours to support students 1-on-1, grade assignments and exams, and design + maintain automated autograding test scripts to ensure fast, consistent feedback.",
+      "highlights": ["CSC108H1: Introduction to Computer Programming", "GGR274H1: Introductory Computation and Data Science for the Social Sciences"]
+    },
+    {
+      "name": "Ontario Ministry of Health and Long-Term Care",
+      "location": "Toronto, ON, Canada",
+      "position": "Machine Learning & Full-Stack Developer",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-25",
+      "summary": "As a developer in the Workforce Controllership System (WCX) team, I drove end-to-end delivery of scalable React.js/Spring Boot applications, leveraged large language models for legacy XML migration, and integrated Azure ML and Voiceflow solutions to automate testing, reporting, and data access.",
+      "highlights": [
+        "Reduced migration time by 25% and cut errors by 10% via LLM-powered code skeleton generation",
+        "Evaluated and proposed Azure ML–based anomaly detection and workplace insights for seamless, scalable integration",
+        "Designed a Voiceflow chatbot to query WCX data fields, improving data accessibility for stakeholders",
+        "Executed comprehensive multi-environment testing, leading to a 20% reduction in post-release bugs",
+        "Automated dynamic Power BI dashboards connected to Azure DevOps, boosting project tracking efficiency by 20%",
+        "Led weekly cross-functional team meetings to foster collaboration and drive innovation on WCX, SRI, and HCIS"
+      ]
     }
   ],
   "volunteer": [
@@ -45,15 +60,24 @@
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "University of Toronto",
+      "location": "Toronto, ON, Canada",
+      "url": "https://https://web.cs.toronto.edu/",
+      "area": "CS Concentration: SE4AI, AI & ML, LLM",
+      "studyType": "Master of Science in Applied Computing (MScAC)",
+      "startDate": "2024-09-01",
+      "endDate": "2025-12-25",
+      "score": "4.0/4.0"
+    },
+    {
+      "institution": "MacMaster University",
+      "location": "Hamilton, ON, Canada",
+      "url": "https://www.eng.mcmaster.ca/cas/",
+      "area": "Computer Science",
+      "studyType": "Bechelor of Applied Science Co-op",
+      "startDate": "2019-09-01",
+      "endDate": "2024-05-01",
+      "score": "11.8/12.0"
     }
   ],
   "awards": [
@@ -149,7 +173,7 @@
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker",
       "icon": ""
     },
