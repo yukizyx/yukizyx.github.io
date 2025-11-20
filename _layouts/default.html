@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="profile-container">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="Profile"
+          class="avatar"
+        />
+        <h1 class="name">{{ site.title }}</h1>
+        <p class="bio">{{ site.description }}</p>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          {% for link in site.navigation %}
+          <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="social-links">
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+        <a href="mailto:{{ site.email }}">Email</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="container">{{ content }}</div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+title: "你的名字"
+email: your-email@domain.com
+description: "CS Student & Indie Developer"
+baseurl: "" # 如果绑定了自定义域名保持为空，否则通常也不需要改
+url: "https://yukizyx.github.io"
+github_username: yukizyx
+theme: minima
+
+# 导航栏设置
+navigation:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
