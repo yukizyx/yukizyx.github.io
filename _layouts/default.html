@@ -1,39 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
   </head>
   <body>
-    <aside class="sidebar">
-      <div class="profile-container">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Profile"
-          class="avatar"
-        />
-        <h1 class="name">{{ site.title }}</h1>
-        <p class="bio">{{ site.description }}</p>
+    <canvas id="quantum-canvas"></canvas>
+
+    <nav>
+      <a href="#" class="logo">Yukiz.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#writing">Writing</a>
+        <a href="#timeline">Journey</a>
+        <a href="#research">Work</a>
+        <span class="nav-separator">|</span>
+        <a href="Yukiz_CV.pdf" target="Yukiz_CV.pdf">CV</a>
+        <a
+          href="https://www.linkedin.com/in/yukiz/"
+          target="https://www.linkedin.com/in/yukiz/"
+          >LinkedIn</a
+        >
       </div>
+    </nav>
 
-      <nav class="main-nav">
-        <ul>
-          {% for link in site.navigation %}
-          <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-
-      <div class="social-links">
-        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
-        <a href="mailto:{{ site.email }}">Email</a>
+    <header>
+      <h1>Yukiz</h1>
+      <div class="subtitle">CS Student & Indie Developer</div>
+      <p class="tagline">
+        Passionate about <strong>Full-Stack Development</strong> and
+        <strong>Machine Learning</strong>.<br />
+        Currently exploring distributed systems and building useful tools
+        through code.
+      </p>
+      <div class="hero-buttons">
+        <a href="#research" class="btn btn-primary">View Projects</a>
       </div>
-    </aside>
+    </header>
 
-    <main class="main-content">
-      <div class="container">{{ content }}</div>
-    </main>
+    <main>{{ content }}</main>
+
+    <footer>
+      <p>© 2025 Yukiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Timeline Animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document
+        .querySelectorAll(".timeline-item")
+        .forEach((el) => observer.observe(el));
+
+      // Research Filter
+      function filterProjects(type) {
+        const cards = document.querySelectorAll(".project-card");
+        const buttons = document.querySelectorAll(".tab-btn");
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        cards.forEach((card) => {
+          if (type === "all" || card.getAttribute("data-type") === type) {
+            card.style.display = "block";
+            setTimeout(() => (card.style.opacity = 1), 50);
+          } else {
+            card.style.display = "none";
+            card.style.opacity = 0;
+          }
+        });
+      }
+
+      // Background Particles (Subtle Neural/Quantum Network)
+      const canvas = document.getElementById("quantum-canvas");
+      const ctx = canvas.getContext("2d");
+      let w,
+        h,
+        particles = [];
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.3;
+          this.vy = (Math.random() - 0.5) * 0.3;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > w) this.vx *= -1;
+          if (this.y < 0 || this.y > h) this.vy *= -1;
+        }
+      }
+
+      function init() {
+        particles = new Array(40).fill().map(() => new Particle());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = "#4285F4";
+        ctx.strokeStyle = "rgba(66, 133, 244, 0.15)";
+
+        particles.forEach((p, i) => {
+          p.update();
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Connect particles
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (d < 150) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        });
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("resize", resize);
+      resize();
+      init();
+      animate();
+    </script>
   </body>
 </html>
