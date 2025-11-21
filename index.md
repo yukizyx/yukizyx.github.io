@@ -13,8 +13,6 @@ title: Home
 
 ## News
 
-<ul class="news-list">
-  <li><span class="date">[2024-05]</span> 上线了我的个人网站 v1.0！</li>
-  <li><span class="date">[2024-03]</span> 完成了 <a href="/projects">Smart Task Manager</a> 的开发。</li>
-  <li><span class="date">[2024-01]</span> 开始撰写关于 React 性能优化的系列博客。</li>
-</ul>
+- **[2024-05]** 上线了我的个人网站 v1.0！
+- **[2024-03]** 完成了 [Smart Task Manager](/projects) 的开发。
+- **[2024-01]** 开始撰写关于 React 性能优化的系列博客。
